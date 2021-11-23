@@ -320,7 +320,36 @@ bool contact :: edit(string new_name)
 //Contact name validation
 bool name_valid(string tname)
 {
-  
+    if(tname.size()>20)
+    {
+        std::cout << "Invalid Name!\nEnter a name within 20 charecters!"
+          << std::endl;
+    }
+     else if(tname == "")
+     {
+       std::cout << "Invalid Name!\nName cannot be blank!"
+         <<std::endl;
+       return 0;
+     }
+  else 
+    return 1;
+}
                   
-                  
-                  
+ // mobile number validation
+ bool mob_valid(string tmob)
+ {
+   if(tmob.size()>13 || tmob.size()<10)
+   {
+      std::cout << "Invalidmobile no.\nEnter a no."
+        "between 10 and 13 digits" << std::endl;
+     return 0;
+   }
+   else if(tmob =="")
+   {
+      std::cout<<"Invalid mobile no.\nMobile"
+        "no cannot be blank" << std::endl;
+     return 0;
+   }
+    else 
+      return 1;
+ }
